@@ -8,7 +8,7 @@
 
   mkdir build  
   cd build  
-  cmake -D BUILD_SHARED_LIBS=ON -D EXAMPLES=OFF -D MPI=OFF -G "Visual Studio 14 2015 Win64" ..  
+  cmake -D BUILD_SHARED_LIBS=OFF -D EXAMPLES=OFF -D MPI=OFF -G "Visual Studio 14 2015 Win64" ..  
 
 6. Open arpack.sln from build folder
 7. Select arpack project

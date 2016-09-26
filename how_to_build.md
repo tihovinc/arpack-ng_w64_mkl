@@ -62,4 +62,13 @@
   copy /B /Y arpackdll.lib "%ARPACKROOT%\dlllib\arpack.lib"  
   copy /B /Y arpack.dll "%ARPACKROOT%\bin"  
   and add %ARPACKROOT%\bin to path if it isn't already added (setx PATH "%PATH%%ARPACKROOT%\bin;")  
-  
+
+#### How to export in lib file names in different case than default:
+1. Create def file like under section Build steps for dll
+2. Edit exported function names so that they get form:
+
+  arscnd  = ARSCND
+  cgetv0  = CGETV0
+  cmout  = CMOUT
+  ;where in first column are names you want to be exported, and in second column are compiler generated names
+  ;this also works for static lib, but than you have to repeat step for generating def file for dll

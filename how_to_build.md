@@ -3,23 +3,24 @@
 1. Download and install Visual Studio 2015 Comunity Edition
 2. Download and install Cmake for Windows
 3. Download and install Intel MKL
-4. Download and unpack arpack-ng
-5. Open CMD, call VS2015x64NativeCmdWithMKL.bat, cd into arpack-ng folder and then type:
+4. Download and install Intel Visual Fortran compiler
+5. Download and unpack arpack-ng
+6. Open CMD, call VS2015x64NativeCmdWithMKL.bat, cd into arpack-ng folder and then type:
 
   mkdir build  
   cd build  
   cmake -D BUILD_SHARED_LIBS=OFF -D EXAMPLES=OFF -D MPI=OFF -G "Visual Studio 14 2015 Win64" ..  
 
-6. Open arpack.sln from build folder
-7. Select arpack project
-8. Right click -> Properties
-9. Select All Configurations in drop down control Configuration
-10. Choose Configuration Properties -> General
-11. Edit Output Directory field to contain $(SolutionDir)Out\$(Configuration)\
-12. Edit Intermediate Directory field to contain $(SolutionDir)Int\$(Configuration)\$(ProjectName)\
-13. If you want to be able to execute executables on Windows XP than change Platform Toolset to v140_xp
-14. Build arpack project  
-15. Run Administrative cmd, cd into Out subfolder in solution folder and execute:
+7. Open arpack.sln from build folder
+8. Select arpack project
+9. Right click -> Properties
+10. Select All Configurations in drop down control Configuration
+11. Choose Configuration Properties -> General
+12. Edit Output Directory field to contain $(SolutionDir)Out\$(Configuration)\
+13. Edit Intermediate Directory field to contain $(SolutionDir)Int\$(Configuration)\$(ProjectName)\
+14. If you want to be able to execute executables on Windows XP than change Platform Toolset to v140_xp
+15. Build arpack project  
+16. Run Administrative cmd, cd into Out subfolder in solution folder and execute:
     
   setx ARPACKROOT "%ProgramFiles%\Arpack" /M  
   set ARPACKROOT=%ProgramFiles%\Arpack  
@@ -67,8 +68,8 @@
 1. Create def file like under section Build steps for dll
 2. Edit exported function names so that they get form:
 
-  arscnd  = ARSCND
-  cgetv0  = CGETV0
-  cmout  = CMOUT
-  ;where in first column are names you want to be exported, and in second column are compiler generated names
-  ;this also works for static lib, but than you have to repeat step for generating def file for dll
+  arscnd  = ARSCND  
+  cgetv0  = CGETV0  
+  cmout  = CMOUT  
+  ;where in first column are names you want to be exported, and in second column are compiler generated names  
+  ;this also works for static lib, but than you have to repeat step for generating def file for dll  
